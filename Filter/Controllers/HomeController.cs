@@ -12,7 +12,7 @@ namespace Filter.Controllers
         [HandleError]
         public ActionResult Index()
         {
-            throw new Exception();
+      
             return View();
         }
     }

@@ -45,9 +45,16 @@ namespace AuthorizeFilter.Controllers
 
         public bool Isvalid(LoginUser u)
         {
-
             var creditial = db.logins.Where(model => model.UserName == u.UserName && model.Password == u.Password).FirstOrDefault();
             return (u.UserName == creditial.UserName && u.Password == creditial.Password);
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session["User"] = null;
+            return  RedirectToAction("Index","Home");
+            
         }
     }
 }

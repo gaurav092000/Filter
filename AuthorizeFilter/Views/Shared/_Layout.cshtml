@@ -21,16 +21,39 @@
                 @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @if (Session["User"] != null)
+                        {
+                            @Html.ActionLink("Logout", "Logout", "Login")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login", "Index", "Login")
+                        }
+                    
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>  &nbsp;
+                <li>@Html.ActionLink("About", "About", "Home")</li> &nbsp;
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                        @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>*@
+                    </ul>
+
+                    @*<div class="navbar-collapse collapse">
+                        <ul class="navbar navbar-nav">
+                            @if (Session["User"] != null)
+                            {
+                                <li>@Html.ActionLink("Logout", "logout", "Login")</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                            }
+                        </ul>
+
+                    </div>*@
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>  &nbsp;
-        <li>@Html.ActionLink("About", "About", "Home")</li> &nbsp;
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>*@
-                </ul>
-            </div>
-        </div>
     </div>
 
     <div class="container body-content">
